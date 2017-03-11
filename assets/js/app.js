@@ -7,6 +7,7 @@ $(document).ready(function() {
     var searchBtn = $('#search-btn');
     var clearBtn = $('#clear-btn');
 
+    
 
 
 
