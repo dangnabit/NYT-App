@@ -25,7 +25,7 @@ $(document).ready(function() {
 
     */
 
-    
+	$searchQuery.trim();    
     $startYear.value = $startYear.value + "0101";
 	$endYear.value = $endYear.value + "0101";
 
@@ -35,14 +35,17 @@ $(document).ready(function() {
 
     searchBtn.on('click', function() {
     	
-        var url = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
+       
+    });
+function getArticles(numArticles){
+ var url = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
 
         url += '?' + $.param({
             'api-key': "9707b10b5ab44dada00194c572da1017",
         	'q': $searchQuery.value,
-         	'begin_date': $startYear.value,
-         	'end_date': $endYear.value,
-         	'page': 0
+         	'begin_date': $startYear.value + '0101',
+         	'end_date': $endYear.value + '0101',
+         	
         });
 
 
@@ -62,8 +65,7 @@ $(document).ready(function() {
             });
 
         });
-    });
-
+}
 
 
 });
